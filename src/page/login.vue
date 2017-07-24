@@ -13,7 +13,7 @@
 						<el-input type="password" placeholder="密码" v-model="loginForm.password"></el-input>
 					</el-form-item>
 					<el-form-item>
-				    	<el-button type="primary" @click="submitForm('loginForm')" class="submit_btn">登陆</el-button>
+				    	<el-button type="primary" @click="submitForm('loginForm')" class="submit_btn">登录</el-button>
 				  	</el-form-item>
 				</el-form>
 				<p class="tip">温馨提示：</p>
@@ -48,7 +48,7 @@
 		},
 		mounted(){
 			this.showLogin = true;
-			if (!this.adminInfo.id) {
+            if (!this.adminInfo.id) {
     			this.getAdminData()
     		}
 		},
@@ -58,11 +58,11 @@
 		methods: {
 			...mapActions(['getAdminData']),
 			async submitForm(formName) {
-				this.$refs[formName].validate(async (valid) => {
-					if (valid) {
+                this.$refs[formName].validate(async (valid) => {
+                    if (valid) {
 						const res = await login({user_name: this.loginForm.username, password: this.loginForm.password})
-						if (res.status == 1) {
-							this.$message({
+                        if (res.status == 1) {
+                            this.$message({
 		                        type: 'success',
 		                        message: '登录成功'
 		                    });
@@ -72,7 +72,7 @@
 		                        type: 'error',
 		                        message: res.message
 		                    });
-						}
+                        }
 					} else {
 						this.$notify.error({
 							title: '错误',

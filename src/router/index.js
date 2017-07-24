@@ -23,7 +23,7 @@ const explain = r => require.ensure([], () => r(require('@/page/explain')), 'exp
 
 const routes = [
 	{
-		path: '/',
+	    path: '/',
 		component: login
 	},
 	{

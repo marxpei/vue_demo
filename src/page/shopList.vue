@@ -2,9 +2,7 @@
     <div class="fillcontain">
         <head-top></head-top>
         <div class="table_container">
-            <el-table
-                :data="tableData"
-                style="width: 100%">
+            <el-table :data="tableData" style="width: 100%">
                 <el-table-column type="expand">
                   <template scope="props">
                     <el-form label-position="left" inline class="demo-table-expand">
